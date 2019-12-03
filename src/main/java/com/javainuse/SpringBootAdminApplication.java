@@ -24,6 +24,8 @@ public class SpringBootAdminApplication {
 			http.formLogin().loginPage("/login.html").loginProcessingUrl("/login").permitAll();
 			http.logout().logoutUrl("/logout");
 			http.csrf().disable();
+			
+			System.out.println("Hello");
 
 			http.authorizeRequests().antMatchers("/login.html", "/**/*.css", "/img/**", "/third-party/**").permitAll();
 			http.authorizeRequests().antMatchers("/**").authenticated();
